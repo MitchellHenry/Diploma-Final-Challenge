@@ -1,0 +1,11 @@
+<p>Email</p>
+<input type="text" [(ngModel)]="this.email">
+<p>Password</p>
+<input type="text" [(ngModel)]="this.password">
+<p>Name</p>
+<input type="text" [(ngModel)]="this.name">
+<p>Name</p>
+<input type="date" max="2002-01-01" [(ngModel)]="this.dob">
+<br>
+<br>
+<button type="submit" (click)="signUp(this.email,this.password,this.name,this.dob)">Sign Up</button>

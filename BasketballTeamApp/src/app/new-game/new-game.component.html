@@ -1,0 +1,8 @@
+<h1>New Game</h1>
+<p>Date</p>
+<input type="datetime-local" [(ngModel)]="this.date">
+<p>Venue</p>
+<input type="text" [(ngModel)]="this.venue">
+<br>
+<br>
+<button type="submit" (click)="NewGame(this.date,this.venue)" >Add New BasketBall Game</button>

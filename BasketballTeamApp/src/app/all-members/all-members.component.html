@@ -1,0 +1,15 @@
+<h1>All Members</h1>
+<table>
+    <tr>
+        <th>Name</th>
+        <th>Total Spent</th>
+        <th>Date Of Birth</th>
+        <th>Role</th>
+    </tr>
+    <tr *ngFor="let member of dataservice.allMembers; let i = index">
+        <td>{{member.name}}</td>
+        <td>{{dataservice.totalSpent[i]}}</td>
+        <td>{{member.dob |date:'short'}}</td>
+        <td>{{member.role}}</td>
+    </tr>
+</table>

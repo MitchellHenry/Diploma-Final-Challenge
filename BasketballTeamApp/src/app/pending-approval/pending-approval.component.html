@@ -1,0 +1,19 @@
+<h1>Pending Approval</h1>
+<table>
+    <tr>
+        <th>Email</th>
+        <th>Name</th>
+        <th>Date Of Birth</th>
+        <th>Role</th>
+        <th>Status</th>
+    </tr>
+    <tr *ngFor="let member of dataservice.pendingApproval; let i = index">
+        <td>{{member.email}}</td>
+        <td>{{member.name}}</td>
+        <td>{{member.dob |date:'short'}}</td>
+        <td>{{member.role}}</td>
+        <td>{{member.status}}</td>
+        <button (click)="dataservice.AuthorizeAccount(i)">Authorize</button>
+        <button (click)="dataservice.RejectAccount(i)">Reject</button>
+    </tr>
+</table>

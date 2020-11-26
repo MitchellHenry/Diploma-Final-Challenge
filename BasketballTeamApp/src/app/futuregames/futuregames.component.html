@@ -1,0 +1,21 @@
+<h1>Future Games</h1>
+<table>
+    <tr>
+        <th>Booking ID</th>
+        <th>Date</th>
+        <th>Venue</th>
+        <th>Booker</th>
+    </tr>
+    <tr *ngFor="let CoffeeDate of dataservice.futureGames">
+        <td>{{CoffeeDate.id}}</td>
+        <td>{{CoffeeDate.date |date:'short'}}</td>
+        <td>{{CoffeeDate.venue}}</td>
+        <td>{{CoffeeDate.booker}}</td>
+    </tr>
+</table>
+<h1>Cancel Planned Games</h1>
+<p>Booking ID</p>
+<input type="number" [(ngModel)]="this.id">
+<br>
+<br>
+<button (click)="this.dataservice.DeleteGameByID(this.id)" >Cancel Game</button>
