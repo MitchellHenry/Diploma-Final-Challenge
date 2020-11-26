@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Members } from '../Models/members';
+import { NewMember } from '../Models/new-member';
 import { DataService } from '../Services/data.service';
 
 @Component({
@@ -19,7 +19,7 @@ export class SignupComponent implements OnInit {
     
   }
   signUp(email: string, password: string, name: string, dob: Date){
-    let member: Members = new Members(null,email,name,dob,password,"pending","member");
+    let member: NewMember = new NewMember(email,name,dob,password,"pending","member");
    console.log(member)
    this.dataservice.Signup(member)
   }

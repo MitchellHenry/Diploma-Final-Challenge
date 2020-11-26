@@ -7,6 +7,7 @@ import { NewGame } from '../Models/new-game';
 import { BasketBallGame } from '../Models/basket-ball-game';
 import { InnerSubscriber } from 'rxjs/internal/InnerSubscriber';
 import { identifierModuleUrl } from '@angular/compiler';
+import { NewMember } from '../Models/new-member';
 
 @Injectable({
   providedIn: 'root'
@@ -14,7 +15,7 @@ import { identifierModuleUrl } from '@angular/compiler';
 export class DataService {
 
 
-  apiURL: string = "https://localhost:5001/api/";
+  apiURL: string = "http://diplomafinalchallenge-env.eba-vit9s2pe.us-east-1.elasticbeanstalk.com/api/";
   loggedInMember: Members
   futureGames: BasketBallGame[];
   pastGames: BasketBallGame[];
@@ -167,7 +168,7 @@ export class DataService {
         })
     })
   }
-  Signup(member: Members) {
+  Signup(member: NewMember) {
     console.log(member);
     return new Promise((resolve, reject) => {
       this._http.post(this.apiURL + "Members/signup", member).subscribe(
